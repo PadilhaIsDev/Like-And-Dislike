@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/cu.css">
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url(../img/fundo.jpg);
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+
+        #container {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            transition: 0.1s ease-in-out;
+        } 
+
+        .shrink {
+            transform: scale(0.9);
+        }
+
+
+    </style>
+</head>
+<body>
+    <main id="container">
+        <img src="img/like.jpg" alt="meu cu" id="imgLike">
+    </main>
+    <script>
+        const imagem = document.getElementById("imgLike")
+        const imagemOne = 'img/like.jpg'
+        const imagemTwo = 'img/deslike.jpg'
+
+        imagem.addEventListener('click', () =>{
+            
+            imagem.classList.add('shrink');
+
+            setTimeout(() => {
+                if (imagem.src.endsWith(imagemOne)) {
+                    imagem.src = imagemTwo;
+                }  
+                else {  
+                    imagem.src = imagemOne;
+                }
+                imagem.classList.remove('shrink');
+            }, 500);  
+        }); 
+    </script>
+</body>
+</html>
